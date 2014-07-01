@@ -18,5 +18,5 @@ if (location.hostname == "www.youtube.com") {
   document.getElementsByTagName('head')[0].appendChild(pageStyle);
 
   // show full video description
-  document.querySelector("#watch-description.yt-uix-expander-collapsed").className="";
+  document.querySelector("#watch-description.yt-uix-expander.yt-uix-expander-head.yt-uix-button-panel.yt-uix-expander-collapsed").className="yt-uix-expander yt-uix-expander-head yt-uix-button-panel";
 }
