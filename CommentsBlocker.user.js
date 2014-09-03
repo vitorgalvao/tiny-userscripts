@@ -22,13 +22,4 @@ if (location.hostname == "www.youtube.com") {
     document.querySelector(".ytp-segmented-control-other").click();
     document.querySelector("#settings_button").click();
   }
-
-  // show share panel
-  show_share_panel_loop = window.setInterval(function() {
-    if (document.querySelector("#watch-action-panels").offsetWidth == 0) { // if share panel is not yet visible on page
-      document.querySelectorAll(".action-panel-trigger")[1].click(); // try to show it
-    } else {
-      clearInterval(show_share_panel_loop);
-    }
-  }, 500);
 }
