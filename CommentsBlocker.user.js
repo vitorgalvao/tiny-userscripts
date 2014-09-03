@@ -1,13 +1,6 @@
 // ==UserScript==
-// @match http://*.theverge.com/*
 // @match https://*.youtube.com/*
 // ==/UserScript==
-
-// The Verge
-if (location.hostname == "www.theverge.com") {
-  // hide comments
-  document.getElementById("comments").style.visibility="hidden";
-}
 
 // Youtube
 if (location.hostname == "www.youtube.com") {
