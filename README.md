@@ -8,5 +8,5 @@ Allows you to quickly merge pull requests on [github](https://github.com/). Pres
 ### YoutubeChanges
 Blocks comments on youtube, turns off annotations, and expands the description box.
 
-### License
+#### License
 Most code in these User Scripts is licensed under The Unlicense (Public Domain, essentially). Single lines of code (will be minified) immediatelly preceded by a commented line starting with `// _licensed` are not public domain, and their respective licenses will be in that same comment.
