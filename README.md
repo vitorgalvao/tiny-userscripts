@@ -1,4 +1,4 @@
-# Collection of small browser User Scripts
+# Collection of small browser userscripts
 These were made to be directly used in Chrome, but th code should work in other browsers.
 ![](http://i.imgur.com/mTNRrSa.gif)
 
