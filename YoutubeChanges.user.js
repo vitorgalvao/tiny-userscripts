@@ -10,9 +10,5 @@ if (location.hostname == "www.youtube.com") {
   document.querySelector("#action-panel-details").className="action-panel-content yt-card yt-card-has-padding yt-uix-expander";
 
   // hide annotations
-  if (document.querySelector(".ytp-segmented-control-other")) { // this will only be true if the video has annotations
-    document.querySelector("#settings_button").click();
-    document.querySelector(".ytp-segmented-control-other").click();
-    document.querySelector("#settings_button").click();
-  }
+  document.querySelector(".ytp-segmented-control-other").click();
 }
