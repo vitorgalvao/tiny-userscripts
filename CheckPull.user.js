@@ -19,8 +19,7 @@ function clickButtonByContent(content) {
   // abort if more than one element matches, else click it
   if (matchingButtons.length != 1) {
     throw "There should be exactly one element to click";
-  }
-  else {
+  } else {
     matchingButtons[0].click();
   }
 }
@@ -44,7 +43,7 @@ listener.counting_combo("ctrl m", function(e, count) {
     clickButtonByContent('Confirm merge');
 
     // scroll to bottom of page and close tab
-    window.scrollTo(0,document.body.scrollHeight);
+    window.scrollTo(0, document.body.scrollHeight);
     window.setInterval(function() {
       if (document.querySelectorAll('span.octicon.octicon-git-merge.discussion-item-icon').length > 0) {
         window.close();
