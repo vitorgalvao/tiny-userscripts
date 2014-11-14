@@ -1,5 +1,5 @@
 # Collection of small browser userscripts
-These were made to be directly used in Chrome, but th code should work in other browsers.
+These were made to be directly used in Chrome, but the code should work in other browsers.
 ![](http://i.imgur.com/mTNRrSa.gif)
 
 ### CheckPull
