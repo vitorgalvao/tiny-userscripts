@@ -1,5 +1,5 @@
 // ==UserScript==
-// @match https://*.youtube.com/*
+// @match http://*.youtube.com/*
 // ==/UserScript==
 
 // hide comments
