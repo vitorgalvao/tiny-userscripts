@@ -45,7 +45,7 @@ listener.counting_combo("ctrl m", function(e, count) {
     // scroll to bottom of page and close tab
     window.scrollTo(0, document.body.scrollHeight);
     window.setInterval(function() {
-      if (document.querySelectorAll('span.octicon.octicon-git-merge.discussion-item-icon').length > 0) {
+      if (document.querySelector('span.octicon.octicon-git-merge.discussion-item-icon')) {
         window.close();
       } else if (document.querySelector('.merge-form-failed')) {
           document.location.reload();
