@@ -47,6 +47,8 @@ listener.counting_combo("ctrl m", function(e, count) {
     window.setInterval(function() {
       if (document.querySelectorAll('span.octicon.octicon-git-merge.discussion-item-icon').length > 0) {
         window.close();
+      } else if (document.querySelector('.merge-form-failed')) {
+          document.location.reload();
       }
     }, 2000);
   }
