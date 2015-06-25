@@ -1,5 +1,10 @@
 // ==UserScript==
-// @match https://*.github.com/*
+// @name          CheckPull
+// @namespace     http://vitorgalvao.com/
+// @version       0.1
+// @description   Quickly merge pull requests on github.
+// @match         https://*.github.com/*
+// @run-at        document-end
 // ==/UserScript==
 
 // _licensed // Keypress version 2.0.3 (c) 2014 David Mauro; Licensed under the Apache License, Version 2.0; http://www.apache.org/licenses/LICENSE-2.0
