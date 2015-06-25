@@ -3,7 +3,7 @@
 // @namespace     http://vitorgalvao.com/
 // @version       0.1
 // @description   On Youtube, turns off annotations and expands the description box.
-// @match         https://*.youtube.com/*
+// @match         https://*.youtube.com/watch*
 // @run-at        document-end
 // ==/UserScript==
 
