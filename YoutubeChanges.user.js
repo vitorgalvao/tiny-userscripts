@@ -14,8 +14,9 @@ function change_youtube() {
   }
 
   // hide annotations
-  if ((document.querySelectorAll(".ytp-segmented-control-other")[1].classList[2] == "ytp-segmented-control-selected")) {
-    document.querySelectorAll(".ytp-segmented-control-deselected")[1].click();
+  var annotations_off = document.querySelector("div[aria-labelledby='ytp-menu-iv']");
+  if (annotations_off) {
+    annotations_off.click();
   }
 }
 
