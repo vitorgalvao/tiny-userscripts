@@ -9,8 +9,9 @@
 
 function change_youtube() {
   // show full video description
-  if (document.getElementsByClassName("yt-uix-expander-collapsed-body")[0].children[0].innerHTML == "Show more") {
-    document.getElementsByClassName("yt-uix-expander-collapsed-body")[0].click();
+  var expand_description = document.getElementsByClassName("yt-uix-expander-collapsed-body")[0];
+  if (expand_description.children[0].innerHTML == "Show more") {
+    expand_description.click();
   }
 
   // hide annotations
