@@ -1,13 +1,23 @@
 // ==UserScript==
-// @match http://*.youtube.com/*
+// @name          YouTubeChanges
+// @namespace     http://vitorgalvao.com/
+// @version       0.1
+// @description   On Youtube, turns off annotations and expands the description box.
+// @match         https://*.youtube.com/*
+// @run-at        document-end
 // ==/UserScript==
 
-window.setTimeout(function() {
-  // hide comments
-  document.querySelector("#watch-discussion").style.display = "none";
+function change_youtube() {
   // show full video description
-  document.querySelector("#action-panel-details").className="action-panel-content yt-card yt-card-has-padding yt-uix-expander";
+  if (document.getElementsByClassName("yt-uix-expander-collapsed-body")[0].children[0].innerHTML == "Show more") {
+    document.getElementsByClassName("yt-uix-expander-collapsed-body")[0].click();
+  }
 
   // hide annotations
-  document.querySelector(".ytp-segmented-control-other").click();
-}, 2000);
+  if ((document.querySelectorAll(".ytp-segmented-control-other")[1].classList[2] == "ytp-segmented-control-selected")) {
+    document.querySelectorAll(".ytp-segmented-control-deselected")[1].click();
+  }
+}
+
+change_youtube();
+document.getElementById("player-api").addEventListener("focus", change_youtube); // fires when video changes
