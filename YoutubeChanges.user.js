@@ -10,7 +10,7 @@
 function change_youtube() {
   // show full video description
   var expand_description = document.getElementsByClassName("yt-uix-expander-collapsed-body")[0];
-  if (expand_description.children[0].innerHTML == "Show more") {
+  if (expand_description.querySelector("span").innerHTML == "Show more") {
     expand_description.click();
   }
 
