@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          YouTubeChanges
 // @namespace     http://vitorgalvao.com/
-// @version       0.1.1
+// @version       0.1.2
 // @description   On Youtube, turns off annotations and expands the description box.
 // @match         https://*.youtube.com/watch*
 // @run-at        document-end
@@ -22,9 +22,11 @@ function change_youtube() {
   document.getElementById("action-panel-details").className = document.getElementById("action-panel-details").className.replace(/(?:^|\s)yt-uix-expander-collapsed(?!\S)/g, "");
 
   // hide annotations
-  var annotations_label = document.getElementsByClassName("ytp-menuitem-label")[1];
-  if (annotations_label.innerHTML === "Annotations") {
-    annotations_label.click();
+  var all_labels = document.getElementsByClassName("ytp-menuitem-label");
+  for (var i = 0; i < all_labels.length; i++) {
+    if ((all_labels[i].innerHTML == "Annotations") && (all_labels[i].parentNode.getAttribute("aria-checked") == "true")) { // find the correct label and see if it is active
+      all_labels[i].click(); // and in that case, click it
+    }
   }
 }
 
