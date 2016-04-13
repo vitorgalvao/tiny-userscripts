@@ -5,6 +5,8 @@ These were made to be directly used in Chrome, but the code should work in other
 ### CheckPull
 Quickly merge pull requests on [github](https://github.com/). Press <kbd>ctrl</kbd><kbd>m</kbd> repeatedly to cycle (in order) through “Files changed”, “Commits”, and “Conversation”, at which point the pull request will be merged, and the tab closed within two seconds. You have to keep pressing <kbd>ctrl</kbd> between these, or you’ll have to start over. Press <kbd>esc</kbd> at any time to go to the “Conversations” tab, with the focus on the “Write” box.
 
+Pull requests are merge via [squash merging](https://github.com/blog/2141-squash-your-commits). If prefer merge commits, look for the `clickButtonByContent('Confirm squash and merge');` line and replace it with `clickButtonByContent('Confirm squash and merge');`.
+
 ### YoutubeChanges
 On Youtube, turns off annotations and expands the description box.
 
