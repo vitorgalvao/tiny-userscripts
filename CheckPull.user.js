@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          CheckPull
 // @namespace     http://vitorgalvao.com/
-// @version       0.1.2
+// @version       0.1.3
 // @description   Quickly merge pull requests on github.
 // @match         https://*.github.com/*
 // @run-at        document-end
@@ -44,6 +44,7 @@ listener.counting_combo('ctrl m', (e, count) => {
     // go to conversation tab
     document.getElementsByClassName('tabnav-tab')[0].click();
     // merge pull request
+    clickButtonByContent('Merge pull request');
     clickButtonByContent('Confirm squash and merge');
   }
 });
