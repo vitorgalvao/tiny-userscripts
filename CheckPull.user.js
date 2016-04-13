@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          CheckPull
 // @namespace     http://vitorgalvao.com/
-// @version       0.1.1
+// @version       0.1.2
 // @description   Quickly merge pull requests on github.
 // @match         https://*.github.com/*
 // @run-at        document-end
@@ -32,7 +32,7 @@ function clickButtonByContent(content) {
 // initialise listener
 const listener = new window.keypress.Listener();
 
-// ctrl+m repeatedly, to go through steps
+// ctrl+m repeatedly to go through steps
 listener.counting_combo('ctrl m', (e, count) => {
   if (count === 1) {
     // check changed files tab
@@ -44,19 +44,7 @@ listener.counting_combo('ctrl m', (e, count) => {
     // go to conversation tab
     document.getElementsByClassName('tabnav-tab')[0].click();
     // merge pull request
-    // clickButtonByContent('Merge pull request');
     clickButtonByContent('Confirm squash and merge');
-
-
-    // scroll to bottom of page and close tab
-    window.scrollTo(0, document.body.scrollHeight);
-    window.setInterval(() => {
-      if (document.querySelector('.discussion-item-merged')) {
-        window.close();
-      } else if (document.querySelector('.merge-form-failed')) {
-        document.location.reload();
-      }
-    }, 2000);
   }
 });
 
