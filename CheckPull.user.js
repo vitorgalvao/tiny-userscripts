@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          CheckPull
 // @namespace     http://vitorgalvao.com/
-// @version       0.2.1
+// @version       0.3.0
 // @description   Quickly merge pull requests on github.
 // @match         https://*.github.com/*
 // @run-at        document-end
@@ -78,6 +78,7 @@ Mousetrap.bind('ctrl+d', () => {
 Mousetrap.bind('1', () => { openTab('conversation'); });
 Mousetrap.bind('2', () => { openTab('commits'); });
 Mousetrap.bind('3', () => { openTab('files'); });
+Mousetrap.bind('0', () => { document.querySelector('a.diff-expander.js-expand').click(); }); // expand diff
 
 // esc to go to new comment field
 Mousetrap.bind('esc', () => {
