@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          CheckPull
 // @namespace     http://vitorgalvao.com/
-// @version       0.3.0
+// @version       0.3.1
 // @description   Quickly merge pull requests on github.
 // @match         https://*.github.com/*
 // @run-at        document-end
@@ -50,7 +50,7 @@ function openTab(tabName) {
 // ctrl+m does a merge commit
 Mousetrap.bind('ctrl+m', () => {
   openTab('conversation');
-  clickButtonByContent('Confirm merge');
+  clickButtonByContent('Confirm  merge');
 });
 
 // ctrl+s does a squash commit
