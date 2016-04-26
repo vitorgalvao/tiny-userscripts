@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          CheckPull
 // @namespace     http://vitorgalvao.com/
-// @version       0.3.1
+// @version       0.3.2
 // @description   Quickly merge pull requests on github.
 // @match         https://*.github.com/*
 // @run-at        document-end
@@ -30,6 +30,15 @@ function clickButtonByContent(content) {
   }
 }
 
+function blurCommentField() {
+  const activeElem = document.activeElement;
+  if (activeElem.id === 'new_comment_field') {
+    activeElem.blur();
+    return true; // let us know the field was active
+  }
+  return false;
+}
+
 function openTab(tabName) {
   let tabIndex;
 
@@ -50,12 +59,14 @@ function openTab(tabName) {
 // ctrl+m does a merge commit
 Mousetrap.bind('ctrl+m', () => {
   openTab('conversation');
+  blurCommentField();
   clickButtonByContent('Confirm  merge');
 });
 
 // ctrl+s does a squash commit
 Mousetrap.bind('ctrl+s', () => {
   openTab('conversation');
+  blurCommentField();
   clickButtonByContent('Confirm squash and merge');
 });
 
@@ -72,6 +83,7 @@ Mousetrap.bind('ctrl+d', () => {
     }
   }());
 
+  blurCommentField();
   clickButtonByContent('Confirm squash and merge');
 });
 
@@ -80,16 +92,21 @@ Mousetrap.bind('2', () => { openTab('commits'); });
 Mousetrap.bind('3', () => { openTab('files'); });
 Mousetrap.bind('0', () => { document.querySelector('a.diff-expander.js-expand').click(); }); // expand diff
 
-// esc to go to new comment field
+// esc to go to new comment field if not there, or leave it if there
 Mousetrap.bind('esc', () => {
-  openTab('conversation');
+  if (!blurCommentField()) { // try blurring comment field first, and only try to focus if it wasn't already
+    openTab('conversation');
 
-  (function focusCommentField() {
-    const commentArea = document.getElementById('new_comment_field');
-    if (commentArea) {
-      commentArea.focus();
-    } else {
-      setTimeout(focusCommentField, 500);
-    }
-  }());
+    (function focusCommentField() {
+      const commentField = document.getElementById('new_comment_field');
+      if (commentField) {
+        commentField.focus();
+      } else {
+        setTimeout(focusCommentField, 500);
+      }
+    }());
+  }
 });
+
+// add class to comment field so Mousetrap acts when it is selected
+document.getElementById('new_comment_field').classList.add('mousetrap');
