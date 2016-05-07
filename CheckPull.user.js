@@ -107,6 +107,3 @@ Mousetrap.bind('esc', () => {
     }());
   }
 });
-
-// add class to comment field so Mousetrap acts when it is selected
-document.getElementById('new_comment_field').classList.add('mousetrap');
