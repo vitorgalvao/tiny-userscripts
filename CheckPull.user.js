@@ -3,7 +3,7 @@
 // @namespace     http://vitorgalvao.com/
 // @version       0.3.2
 // @description   Quickly merge pull requests on github.
-// @match         https://*.github.com/*
+// @match         https://*.github.com/*/*/pull/*
 // @run-at        document-end
 // ==/UserScript==
 
